@@ -37,12 +37,6 @@ cd catapult-golang-example/get_accounts_info
 go run main.go
 ```
 
-## get_accounts_info
-```bash
-cd catapult-golang-example/get_accounts_info
-go run main.go
-```
-
 ## get_transactions_info
 ```bash
 cd catapult-golang-example/get_transactions_info
@@ -73,11 +67,7 @@ cd catapult-golang-example/get_network_info
 go run main.go
 ```
 
-## announces_a_transaction
-```bash
-cd catapult-golang-example/announces_a_transaction
-go run main.go
-```
+# Transaction Examples
 
 ## transfer_transaction
 ```bash

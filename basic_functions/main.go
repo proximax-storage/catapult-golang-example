@@ -14,8 +14,8 @@ func main() {
 	fmt.Println("1. Generate a new Key Pair")
 	KeyPair, _ := crypto.NewRandomKeyPair()
 
-	fmt.Printf("\tGenerated PublicKey:\t%x\n", KeyPair.PublicKey.Raw)
-	fmt.Printf("\tGenerated PrivateKey:\t%x\n\n", KeyPair.PrivateKey.Raw)
+	fmt.Printf("\tGenerated PrivateKey:\t%x\n", KeyPair.PrivateKey.Raw)
+	fmt.Printf("\tGenerated PublicKey:\t%x\n\n", KeyPair.PublicKey.Raw)
 
 	//--------------------------------------------------
 	// 2. Create an Address from a given public key.
