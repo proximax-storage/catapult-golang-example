@@ -76,6 +76,8 @@ go run main.go
 # Transaction Examples
 
 ## transfer_transaction
+
+1. Transfer 0.000001 XPX
 ```bash
 cd catapult-golang-example/transfer_transaction
 go run main.go
