@@ -32,36 +32,42 @@ go run main.go
 ```
 
 ## get_accounts_info
+**TODO**
 ```bash
 cd catapult-golang-example/get_accounts_info
 go run main.go
 ```
 
 ## get_transactions_info
+**TODO**
 ```bash
 cd catapult-golang-example/get_transactions_info
 go run main.go
 ```
 
 ## get_mosaic_info
+**TODO**
 ```bash
 cd catapult-golang-example/get_mosaic_info
 go run main.go
 ```
 
 ## get_namespace_info
+**TODO**
 ```bash
 cd catapult-golang-example/get_namespace_info
 go run main.go
 ```
 
 ## get_blockchain_info
+**TODO**
 ```bash
 cd catapult-golang-example/get_blockchain_info
 go run main.go
 ```
 
 ## get_network_info
+**TODO**
 ```bash
 cd catapult-golang-example/get_network_info
 go run main.go
@@ -76,48 +82,56 @@ go run main.go
 ```
 
 ## register_namespace_transaction
+**TODO**
 ```bash
 cd catapult-golang-example/register_namespace_transaction
 go run main.go
 ```
 
 ## mosaic_definition_transaction
+**TODO**
 ```bash
 cd catapult-golang-example/mosaic_definition_transaction
 go run main.go
 ```
 
 ## mosaic_supply_change_transaction
+**TODO**
 ```bash
 cd catapult-golang-example/mosaic_supply_change_transaction
 go run main.go
 ```
 
 ## modify_multisig_account_transaction
+**TODO**
 ```bash
 cd catapult-golang-example/modify_multisig_account_transaction
 go run main.go
 ```
 
 ## aggregate_complete_transaction
+**TODO**
 ```bash
 cd catapult-golang-example/aggregate_complete_transaction
 go run main.go
 ```
 
 ## aggregate_bonded_transactions
+**TODO**
 ```bash
 cd catapult-golang-example/aggregate_bonded_transactions
 go run main.go
 ```
 
 ## signing_announced_aggregate_bonded_transactions
+**TODO**
 ```bash
 cd catapult-golang-example/signing_announced_aggregate_bonded_transactions
 go run main.go
 ```
 
 ## websocket
+**TODO**
 ```bash
 cd catapult-golang-example/websocket
 go run main.go
