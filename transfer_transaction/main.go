@@ -30,7 +30,7 @@ func main() {
 		sdk.NewAddress(c.RecipientAddress, c.NetworkType),
 		// The array of mosaic to be sent - XPX 0.000001
 		sdk.Mosaics{c.Xpx(1)},
-		// The transaction message of 1024 characters.
+		// The transaction message of 1024 bytes.
 		sdk.NewPlainMessage(""),
 		c.NetworkType,
 	)
