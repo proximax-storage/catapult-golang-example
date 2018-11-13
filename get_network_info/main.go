@@ -10,7 +10,7 @@ import (
 func main() {
 
 	//--------------------------------------------------
-	// 1. Simple Namespace API request
+	// 1. Simple Network API request
 	//--------------------------------------------------
 	fmt.Println("1. Simple Network API request")
 	conf, err := sdk.NewConfig(c.CatapultUrl, c.NetworkType)

@@ -12,6 +12,7 @@ func main() {
 	//--------------------------------------------------
 	// 1. Simple Transaction API request
 	//--------------------------------------------------
+	fmt.Println("1. Simple Transaction API request")
 
 	conf, err := sdk.NewConfig(c.CatapultUrl, c.NetworkType)
 	if err != nil {

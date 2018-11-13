@@ -11,7 +11,6 @@ func main() {
 	//--------------------------------------------------
 	// 1. Simple Account API request
 	//--------------------------------------------------
-
 	addressOne, _ := sdk.NewAddressFromPublicKey(c.SenderPublicKey, c.NetworkType)
 
 	conf, err := sdk.NewConfig(c.CatapultUrl, c.NetworkType)

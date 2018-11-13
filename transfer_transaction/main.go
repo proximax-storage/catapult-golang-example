@@ -10,6 +10,11 @@ import (
 
 func main() {
 
+	//--------------------------------------------------
+	// 1. Transfer 0.000001 XPX
+	//--------------------------------------------------
+	fmt.Println("1. Transfer 0.000001 XPX")
+
 	// Testnet config default
 	conf, err := sdk.NewConfig(c.CatapultUrl, c.NetworkType)
 	if err != nil {
