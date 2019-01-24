@@ -21,7 +21,7 @@ const (
 )
 
 // XPX helper functions
-var XpxMosaicId, _ = sdk.NewMosaicIdFromName("prx:xpx")
+var XpxMosaicId, _ = sdk.NewMosaicIdFromFullName("prx:xpx")
 
 // Create xem with using xem as unit
 func Xpx(amount int64) *sdk.Mosaic {

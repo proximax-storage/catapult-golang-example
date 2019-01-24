@@ -26,11 +26,10 @@ func main() {
 	// Param Hash - transactionId or transactionHash.
 	// Example transactionId: "5BE6FB4CEBBDEC00012EF3EA"
 	// Example transactionHash: "340272E20D100E24732AB69F6F88A5989AD130BA15B37126ADF2A31F85C7F3F6"
-	getTransaction, resp, err := client.Transaction.GetTransaction(context.Background(), "5BE6FB4CEBBDEC00012EF3EA")
+	getTransaction, err := client.Transaction.GetTransaction(context.Background(), "5BE6FB4CEBBDEC00012EF3EA")
 	if err != nil {
 		fmt.Printf("Transaction.GetTransaction returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	fmt.Printf("%s\n\n", getTransaction.String())
 }

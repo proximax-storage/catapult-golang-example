@@ -24,12 +24,11 @@ func main() {
 	// Generate Id from namespaceName
 	namespaceId, _ := sdk.NewNamespaceIdFromName("prx")
 
-	getMosaicsFromNamespace, resp, err := client.Mosaic.GetMosaicsFromNamespace(context.Background(), namespaceId, nil, 0)
+	getMosaicsFromNamespace, err := client.Mosaic.GetMosaicsFromNamespace(context.Background(), namespaceId, 0)
 	if err != nil {
 		fmt.Printf("Namespace.GetNamespace returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 
 	getNamespaceJson, _ := json.MarshalIndent(getMosaicsFromNamespace, "", " ")
 
@@ -41,12 +40,11 @@ func main() {
 	fmt.Println("2. Get namespaces an account owns.")
 	add := &sdk.Address{Address: c.SenderPublicKey}
 
-	getNamespacesFromAccount, resp, err := client.Namespace.GetNamespacesFromAccount(context.Background(), add, "", 0)
+	getNamespacesFromAccount, err := client.Namespace.GetNamespacesFromAccount(context.Background(), add, nil, 0)
 	if err != nil {
 		fmt.Printf("Namespace.GetNamespacesFromAccount returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	getNamespacesFromAccountJson, _ := json.MarshalIndent(getNamespacesFromAccount, "", " ")
 	fmt.Printf("%s\n\n", string(getNamespacesFromAccountJson))
 
@@ -54,18 +52,15 @@ func main() {
 	// 3. Get readable names for a set of namespaces.
 	//--------------------------------------------------
 	fmt.Println("3. Get readable names for a set of namespaces.")
-	NamespaceIDs := sdk.NamespaceIds{
-		List: []*sdk.NamespaceId{
-			namespaceId,
-		},
-	}
+	var NamespaceIDs []*sdk.NamespaceId
+	namespaceId2, _ := sdk.NewNamespaceIdFromName("nem")
+	NamespaceIDs = append(NamespaceIDs, namespaceId2)
 
-	getNamespaceNames, resp, err := client.Namespace.GetNamespaceNames(context.Background(), NamespaceIDs)
+	getNamespaceNames, err := client.Namespace.GetNamespaceNames(context.Background(), NamespaceIDs)
 	if err != nil {
 		fmt.Printf("Namespace.GetNamespaceNames returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	getNamespaceNamesJson, _ := json.MarshalIndent(getNamespaceNames, "", " ")
 	fmt.Printf("%s\n\n", string(getNamespaceNamesJson))
 
@@ -75,23 +70,17 @@ func main() {
 	fmt.Println("4. Get an array of NamespaceInfo for a given set of addresses.")
 
 	var Addresses []*sdk.Address
-	aliceAddress := &sdk.Address{Type: c.NetworkType, Address: c.SenderAddress}
-	carolAddress := &sdk.Address{Type: c.NetworkType, Address: c.RecipientAddress}
+	aliceAddress, _ := sdk.NewAddressFromRaw(c.SenderAddress)
+	carolAddress, _ := sdk.NewAddressFromRaw(c.RecipientAddress)
 
 	Addresses = append(Addresses, aliceAddress)
 	Addresses = append(Addresses, carolAddress)
 
-	adds := &sdk.Addresses{
-		List: Addresses,
-	}
-
-	getNamespacesFromAccounts, resp, err := client.Namespace.GetNamespacesFromAccounts(context.Background(), adds, "", 0)
+	getNamespacesFromAccounts, err := client.Namespace.GetNamespacesFromAccounts(context.Background(), Addresses, nil, 0)
 	if err != nil {
 		fmt.Printf("Namespace.getNamespacesFromAccounts returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	getNamespacesFromAccountsJson, _ := json.MarshalIndent(getNamespacesFromAccounts, "", " ")
 	fmt.Printf("%s\n\n", string(getNamespacesFromAccountsJson))
-
 }

@@ -25,12 +25,11 @@ func main() {
 
 	height := big.NewInt(1)
 
-	getBlockByHeight, resp, err := client.Blockchain.GetBlockByHeight(context.Background(), height)
+	getBlockByHeight, err := client.Blockchain.GetBlockByHeight(context.Background(), height)
 	if err != nil {
 		fmt.Printf("Blockchain.GetBlockByHeight returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	getBlockByHeightJson, _ := json.MarshalIndent(getBlockByHeight, "", " ")
 	fmt.Printf("%s\n\n", string(getBlockByHeightJson))
 
@@ -39,12 +38,11 @@ func main() {
 	//--------------------------------------------------
 	fmt.Println("2. Get transactions from a block.")
 
-	getBlockTransactions, resp, err := client.Blockchain.GetBlockTransactions(context.Background(), height)
+	getBlockTransactions, err := client.Blockchain.GetBlockTransactions(context.Background(), height)
 	if err != nil {
 		fmt.Printf("Blockchain.GetBlockTransactions returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	fmt.Printf("%s\n\n", getBlockTransactions)
 
 	//--------------------------------------------------
@@ -52,12 +50,11 @@ func main() {
 	//--------------------------------------------------
 	fmt.Println("3. Get the current height of the chain.")
 
-	getBlockchainHeight, resp, err := client.Blockchain.GetBlockchainHeight(context.Background())
+	getBlockchainHeight, err := client.Blockchain.GetBlockchainHeight(context.Background())
 	if err != nil {
 		fmt.Printf("Blockchain.GetBlockchainHeight returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	fmt.Printf("%s\n\n", getBlockchainHeight)
 
 	//--------------------------------------------------
@@ -65,12 +62,11 @@ func main() {
 	//--------------------------------------------------
 	fmt.Println("4. Get the current score of the chain.")
 
-	getBlockchainScore, resp, err := client.Blockchain.GetBlockchainScore(context.Background())
+	getBlockchainScore, err := client.Blockchain.GetBlockchainScore(context.Background())
 	if err != nil {
 		fmt.Printf("Blockchain.GetBlockchainScore returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	fmt.Printf("%s\n\n", getBlockchainScore)
 
 	//--------------------------------------------------
@@ -93,12 +89,11 @@ func main() {
 	//--------------------------------------------------
 	fmt.Println("6. Get the storage information.")
 
-	getBlockchainStorage, resp, err := client.Blockchain.GetBlockchainStorage(context.Background())
+	getBlockchainStorage, err := client.Blockchain.GetBlockchainStorage(context.Background())
 	if err != nil {
 		fmt.Printf("Blockchain.GetBlockchainStorage returned error: %s", err)
 		return
 	}
-	fmt.Printf("Response Status Code == %d\n", resp.StatusCode)
 	getBlockchainStorageJson, _ := json.MarshalIndent(getBlockchainStorage, "", " ")
 	fmt.Printf("%s\n\n", getBlockchainStorageJson)
 }

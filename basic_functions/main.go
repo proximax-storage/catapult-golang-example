@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/proximax-storage/nem2-sdk-go/crypto"
+	"github.com/proximax-storage/nem2-crypto-go"
 	"github.com/proximax-storage/nem2-sdk-go/sdk"
 )
 

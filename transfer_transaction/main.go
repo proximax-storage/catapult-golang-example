@@ -34,7 +34,7 @@ func main() {
 		// The address of the recipient account.
 		sdk.NewAddress(c.RecipientAddress, c.NetworkType),
 		// The array of mosaic to be sent - XPX 0.000001
-		sdk.Mosaics{c.Xpx(1)},
+		[]*sdk.Mosaic{sdk.Xem(1)},
 		// The transaction message of 1024 bytes.
 		sdk.NewPlainMessage(""),
 		c.NetworkType,
@@ -47,12 +47,11 @@ func main() {
 	}
 
 	// Announce transaction
-	restTx, resp, err := client.Transaction.Announce(context.Background(), stx)
+	restTx, err := client.Transaction.Announce(context.Background(), stx)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Printf("%s\n", restTx)
-	fmt.Printf("Response Status Code == %d\n\n", resp.StatusCode)
 	fmt.Printf("Hash: \t\t%v\n", stx.Hash)
 	fmt.Printf("Signer: \t%X\n", acc.KeyPair.PublicKey.Raw)
 }
